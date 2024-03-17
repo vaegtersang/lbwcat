@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{lettrine}
+\usepackage{graphicx}
+\newcounter{fragment}[section]
+\renewcommand\thefragment{\Alph{fragment}}
+\newenvironment{fragment}{\refstepcounter{fragment}\subsection{Draft \thefragment}\hfill\par\noindent}{}
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6}
+\renewcommand{\theparagraph}{\thesubsubsection\Alph{paragraph}}
+\newcounter{marginnote}[section]
+\renewcommand{\themarginnote}{\fnsymbol{marginnote}}
+
+\usepackage{xparse}
+\usepackage{marginnote}
+\let\oldmarginnote\marginnote
+\renewcommand\raggedleftmarginnote{}
+\renewcommand\raggedrightmarginnote{}
+\RenewDocumentCommand\marginnote{s+m}{%
+  \IfBooleanTF#1%
+    {\oldmarginnote{\footnotesize #2}}%
+    {\refstepcounter{marginnote}\textsuperscript{\themarginnote}\oldmarginnote{\footnotesize\textsuperscript{\themarginnote}#2}}%
+}
+
+\renewcommand\thepage{\roman{page}}
+\usepackage{enumitem}
+\newenvironment{annotated-bibliography}{\begin{itemize}[label={},leftmargin=0pt,labelsep=0pt,labelindent=0pt,labelwidth=0pt,style=nextline,itemindent=0pt,font=\normalfont]}{\end{itemize}}
+\usepackage{subfiles}
+\usepackage{longtable}
+\usepackage{verse}
+\usepackage[textwidth=345pt]{geometry}
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\newfontfamily{\Gr}[Script=Greek]{CMU Serif}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\urlstyle{same}
+\begin{document}
+  \input{frontmatter}
+  \subfile{abbreviations}
+  \newgeometry{textwidth=300pt,marginparwidth=110pt}
+  \edef\marginnotetextwidth{\the\textwidth}
+  \noindent Citations and internal cross-references appear as footnotes. Tangets I don't want derailing the main flow of the document, comments to myself, and questions I have for anyone else reading this appear as notes in the margin.\marginnote{Except those truly marvelous tangents that this margin is too narrow to contain, which go back in the footnotes.}
+  \newpage
+  
+  \part*{Research \& Inspiration}
+  \addcontentsline{toc}{part}{Research \& Inspiration}
+  \subfile{notes/Vibes}
+  \newpage
+  \renewcommand\thepage{\arabic{page}}
+  \setcounter{page}{1}
+
+  \subfile{notes/characters/characters}
+  \subfile{notes/World}
+  \subfile{notes/outline}
+  \part{Drafts}
+  \subfile{story/Story}
+\end{document}

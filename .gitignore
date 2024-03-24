@@ -1,6 +1,6 @@
 #References to images, documents that I don't necessarily have the rights to redistribute, or which just aren't strictly necessary to building the document and are cumbersome in filesize. 
 notes/lib/ref
-
+*.sublime-workspace
 # because of the heavy use of subfiles, we _can_ build lots of constituent docs that are part of notes, but there's no reason to track each pdf
 **.pdf
 !FGP.pdf

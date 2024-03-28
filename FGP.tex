@@ -34,11 +34,13 @@
 \PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref}
 \urlstyle{same}
+\def\setmarginpargeometry{%
+  \newgeometry{textwidth=300pt,marginparwidth=110pt}
+  \edef\marginnotetextwidth{\the\textwidth}}
 \begin{document}
   \input{frontmatter}
   \subfile{abbreviations}
-  \newgeometry{textwidth=300pt,marginparwidth=110pt}
-  \edef\marginnotetextwidth{\the\textwidth}
+  \setmarginpargeometry
   \noindent Citations and internal cross-references appear as footnotes. Tangets I don't want derailing the main flow of the document, comments to myself, and questions I have for anyone else reading this appear as notes in the margin.\marginnote{Except those truly marvelous tangents that this margin is too narrow to contain, which go back in the footnotes.}
   \newpage
   

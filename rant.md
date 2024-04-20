@@ -1,8 +1,4 @@
-Hi again, and thank you so much for lending me your inbox for screaming. Before I start 
- 1. This... got longer in writing and may not be super easy to read as an ask on Tumblr, so I've also got a copy up, along with all my other project notes and snippets, on github at https://github.com/vaegtersang/lbwcat/. You can find this message at https://github.com/vaegtersang/lbwcat/blob/main/rant.md.
- 2. I'm still cagey about sharing this 20% of a plot idea widely. If you can at all avoid replying to this tumblr ask publicly, please avoid it. 
-
-Again, I can't tell you how much I appreciate this. Anyway, here goes:
+Hi again, and thank you so much for lending me your inbox for screaming. I can't tell you how much I appreciate this. Anyway, here goes:
 ## Aaaaaaaaaaaaaaaaaaaaggggghhh!
 
 _Never_ have my characters mutinied so completely or violently against the story I thought I was writing. I'm not even sure there's anything left of my original idea.

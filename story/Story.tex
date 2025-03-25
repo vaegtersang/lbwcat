@@ -1,13 +1,25 @@
 \documentclass[../FGP.tex]{subfiles}
 \renewcommand\thepage{\arabic{page}}
+\def\setmarginpargeometry{%
+  \newgeometry{textwidth=250pt,marginparwidth=150pt}
+  \edef\marginnotetextwidth{\the\textwidth}}
+%\renewcommand\footnote[1]{}
+%\RenewDocumentCommand\marginnote{s+m}{}
+%\geometry{%
+%  paper=a6paper,
+%  top=.625in,
+%  bottom=.25in,
+%  left=.25in,
+%  right=.25in}
 \begin{document}
 \setmarginpargeometry
+\subfile{eclipse}
 \subfile{Fortune}
 \subfile{Lorule}
 \subfile{Consult}
 \subfile{Princess}
 \subfile{hygge}
-\subfile{eclipse}
+
 
 \end{document}
 

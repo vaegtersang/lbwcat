@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{report}
 \usepackage{lettrine}
 \usepackage{graphicx}
 \newcounter{fragment}[section]
@@ -6,9 +6,22 @@
 \newenvironment{fragment}{\refstepcounter{fragment}\subsection{Draft \thefragment}\hfill\par\noindent}{}
 \setcounter{tocdepth}{6}
 \setcounter{secnumdepth}{6}
+\counterwithin{section}{part}
+\renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\theparagraph}{\thesubsubsection\Alph{paragraph}}
+
+
+
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{greek}
+\newfontfamily{\greekfont}[Script=Greek]{CMU Serif}
 \newcounter{marginnote}[section]
-\renewcommand{\themarginnote}{\fnsymbol{marginnote}}
+\makeatletter
+\def\greek#1{\expandafter\@greek\csname c@#1\endcsname} %in analogy with \roman
+\def\@greek#1{\greekfont\greeknumeral #1}
+\makeatother
+\renewcommand\themarginnote{\greek{marginnote}}
 
 \usepackage{xparse}
 \usepackage{marginnote}

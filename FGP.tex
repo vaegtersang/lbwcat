@@ -21,7 +21,7 @@
 \def\greek#1{\expandafter\@greek\csname c@#1\endcsname} %in analogy with \roman
 \def\@greek#1{\greekfont\greeknumeral #1}
 \makeatother
-\renewcommand\themarginnote{\greek{marginnote}}
+\renewcommand\themarginnote{\Alph{marginnote}}
 
 \usepackage{xparse}
 \usepackage{marginnote}
